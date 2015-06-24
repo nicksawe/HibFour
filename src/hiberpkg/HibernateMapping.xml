@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="hiberpkg.UserEntity" table="user" schema="" catalog="hiberone">
+    <class name="hiberpkg.User" table="user" schema="" catalog="hiberone">
         <id name="id">
             <column name="id" sql-type="int" not-null="true"/>
         </id>

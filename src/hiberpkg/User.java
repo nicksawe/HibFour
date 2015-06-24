@@ -1,6 +1,6 @@
 package hiberpkg;
 
-public class UserEntity {
+public class User {
     private int id;
     private String name;
     private String sex;
@@ -34,7 +34,7 @@ public class UserEntity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        UserEntity that = (UserEntity) o;
+        User that = (User) o;
 
         if (id != that.id) return false;
         if (name != null ? !name.equals(that.name) : that.name != null) return false;
