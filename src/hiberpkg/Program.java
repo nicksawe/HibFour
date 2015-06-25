@@ -19,23 +19,18 @@ public class Program {
         /*end of save user*/
 
 
-        //now retrieve a user
+        /*now retrieve a user*/
         session.beginTransaction();
         //1 is the id. You can use load instead of get in the next line. Get will return null if id
         //doesn t exist, load will return an exception - but i got an exception in both?
-        User loadedUser = (User) session.get(User.class,1);
+        User loadedUser = (User) session.get(User.class, 1);
         System.out.println(loadedUser.getName());
         System.out.println(loadedUser.getSex());
 
         //manipulate the object u loaded
-        loadedUser.setSex("H"); //user id one now has sex as hermaphrodite!
+        loadedUser.setSex("X"); //user id one now has sex as hermaphrodite!
 
         session.getTransaction().commit();
-
-
-
-
-
 
         session.close();
         HibernateUtilGenerated.getSession().getSessionFactory().close();
