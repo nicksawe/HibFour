@@ -4,9 +4,10 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="hiberpkg.User" table="user" schema="" catalog="hiberone">
+    <class name="hiberpkg.User" table="user" >
         <id name="id">
-            <column name="id" sql-type="int" not-null="true"/>
+            <column name="id" sql-type="int" not-null="true"  />
+            <generator class="identity"/>
         </id>
         <property name="name">
             <column name="name" sql-type="varchar" length="45" not-null="true"/>
@@ -14,5 +15,25 @@
         <property name="sex">
             <column name="sex" sql-type="varchar" length="1" not-null="true"/>
         </property>
+
+        <!--added this component on 29jun to be able to save goal and total!-->
+        <component name="proteinData">
+            <property name="total" type="int">
+                <column name="total"/>
+            </property>
+            <property name="goal" type="int">
+                <column name="goal"/>
+            </property>
+
+        </component>
+
+        <set name="history" table = "USER_HISTORY">
+            <key column="id" />
+            <composite-element class="hiberpkg.UserHistory">
+                <property name="entryTime" type="date" column="ENTRY_TIME" />
+                <property name="entry" type="string" column="ENTRY" />
+            </composite-element>
+        </set>
+
     </class>
 </hibernate-mapping>

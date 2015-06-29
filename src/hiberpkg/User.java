@@ -1,9 +1,32 @@
 package hiberpkg;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class User {
     private int id;
     private String name;
     private String sex;
+    private ProteinData proteinData = new ProteinData();
+    private Set<UserHistory> history = new HashSet<>();
+
+    public Set<UserHistory> getHistory() {
+        return history;
+    }
+
+    public void setHistory(Set<UserHistory> history) {
+        this.history = history;
+    }
+
+
+    public ProteinData getProteinData() {
+        return proteinData;
+    }
+
+    public void setProteinData(ProteinData proteinData) {
+        this.proteinData = proteinData;
+    }
+
 
     public int getId() {
         return id;
